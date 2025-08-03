@@ -23,6 +23,17 @@ This project is a web-based AI-powered digit recognition app. Upload an image of
 
 ## 🚀 How to Run Locally
 
+Step 1: Train the model(s)
+
+```bash
+cd model/
+python train.py --arch {cnn architecture} --optimizer {adam/sgd/rmsprop} --epochs {epochs to train} --batch_size {mini batch size}
+
+After training the model(s), you'll see mnist_{arch}_model.h5 files associated with the architecture you provided in training above
+
+Step 2: Run the application
+
 ```bash
 cd api/
 python app.py
+
