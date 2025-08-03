@@ -27,7 +27,7 @@ Step 1: Train the model(s)
 
 ```bash
 cd model/
-python train.py --arch {cnn architecture} --optimizer {adam/sgd/rmsprop} --epochs {epochs to train} --batch_size {mini batch size}
+python train.py --arch {simple/lenet/resnet/vgg} --optimizer {adam/sgd/rmsprop} --epochs {epochs of training} --batch_size {mini batch size}
 
 After training the model(s), you'll see mnist_{arch}_model.h5 files associated with the architecture you provided in training above
 
