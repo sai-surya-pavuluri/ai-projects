@@ -4,7 +4,7 @@ This project is a web-based AI-powered digit recognition app. Upload an image of
 
 ---
 
-## 🔍 Demo Screenshot
+## 🔍 Demo Screenshots
 
 ![App Homepage](./assets/homepage.png)
 ![CNN Models](./assets/cnn_models.png)
