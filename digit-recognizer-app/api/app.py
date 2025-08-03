@@ -8,11 +8,19 @@ import io
 app = Flask(__name__)
 CORS(app)
 
-model = tf.keras.models.load_model("../model/mnist_model.h5")
-
 @app.route('/predict', methods=['POST'])
 def predict():
     print("Received a request to predict the digit")
+
+    # Get model type from form data
+    model_type = request.form.get('model_type', 'simple').lower()
+    model_path = f"../model/mnist_{model_type}_model.h5"
+
+    try:
+        model = tf.keras.models.load_model(model_path)
+    except Exception as e:
+        return jsonify({'error': f'Could not load model: {e}'}), 400
+
     file = request.files['file']
     img = Image.open(file).convert('L').resize((28, 28))
     img_array = np.array(img).astype('float32') / 255.0
